@@ -8,6 +8,8 @@ def cli():
 @cli.command()
 @click.option('--code', help='Code snippet to explain', required=False)
 @click.option('--file', type=click.Path(exists=True), help='Path to code file to explain')
+@click.option('--language', default='Python', help='Language of the code')
+
 def explain(code, file):
     """Explain code snippet or file."""
     if not code and not file:
